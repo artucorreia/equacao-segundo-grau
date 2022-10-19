@@ -1,5 +1,5 @@
 body{
-    font: normal 15pt Arial;
+    font: normal 14pt Arial;
     background-color: #42124c;
     color: white;
 }
@@ -12,14 +12,14 @@ input{
 }
 input#botao{
     width: 120px;
+    border-radius: 15px;
 }
 section{
     background-color: #fe0472 ;
     border-radius: 6px;
     width: 300px;
-    text-align: center;
-    margin-left: 39%;
-    
+    margin: auto;
+    box-shadow: 5px 5px 10px rgb(12, 12, 12);
 }
 div{
     text-align: center;
