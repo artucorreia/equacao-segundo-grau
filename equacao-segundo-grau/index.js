@@ -17,7 +17,7 @@ function calcular(a, b, c) {
     } else{
         let resp = window.document.querySelector('div#resposta');
         let delta = b**2 - 4*a*c;
-        resp.innerHTML = `<p>Δ = ${delta}</p>`;
+        resp.innerHTML = `<p>&Delta; = ${delta}</p>`;
         if (delta >= 0) {
             let raiz = Math.sqrt(delta);
             let numerador = -(b) + raiz;
