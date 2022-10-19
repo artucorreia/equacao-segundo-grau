@@ -26,8 +26,11 @@ div{
     margin-bottom: 10px;
 }
 footer{
-    margin-top: 139px;
-    text-align: right;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    font-style: italic;
+    font-size: 13pt;
 }
 header{
     text-align: center;

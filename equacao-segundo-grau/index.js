@@ -1,28 +1,34 @@
-var botao = window.document.querySelector('input#botao')
-botao.addEventListener('click', calcular)
+let botao = window.document.querySelector('input#botao');
+botao.addEventListener('click', setarValores);
 
-function calcular(){
-    var atxt = window.document.querySelector('input#a')
-    const a = Number(atxt.value)
-    var btxt = window.document.querySelector('input#b')
-    const b = Number(btxt.value)
-    var ctxt = window.document.querySelector('input#c')
-    const c = Number(ctxt.value)
+function setarValores() {
+    let atxt = window.document.querySelector('input#a');
+    let numeroA = Number(atxt.value);
+    let btxt = window.document.querySelector('input#b');
+    let numeroB = Number(btxt.value);
+    let ctxt = window.document.querySelector('input#c');
+    let numeroC = Number(ctxt.value);
+    calcular(numeroA, numeroB, numeroC);
+}
+
+function calcular(a, b, c) {
     if (a == 0) {
-        window.alert('Verifique os dados e tente novamente') 
+        window.alert('Verifique os dados e tente novamente');
     } else{
-        var resp = window.document.querySelector('div#resposta')
-        const delta = b**2 - 4*a*c
-        resp.innerHTML = `<p>Δ = ${delta}</p>`
+        let resp = window.document.querySelector('div#resposta');
+        let delta = b**2 - 4*a*c;
+        resp.innerHTML = `<p>Δ = ${delta}</p>`;
         if (delta >= 0) {
-            var raiz = Math.sqrt(delta)
-            var numerador = -(b) + raiz
-            var denominador = 2 * a
-            var x = numerador / denominador
-            resp.innerHTML += `S = {${x}; `
-            numerador = -(b) - raiz
-            x = numerador / denominador
-            resp.innerHTML += `${x}}`
+            let raiz = Math.sqrt(delta);
+            let numerador = -(b) + raiz;
+            let denominador = 2 * a;
+            let x = numerador / denominador;
+            resp.innerHTML += `S = {${x.toFixed(2)}; `;
+            numerador = -(b) - raiz;
+            x = numerador / denominador;
+            resp.innerHTML += `${x.toFixed(2)}}`;
+        } else {
+            resp.innerHTML += `Raízes não estão contidas no conjunto dos reais`;
         }
     }
 }
