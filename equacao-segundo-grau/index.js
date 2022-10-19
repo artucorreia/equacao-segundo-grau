@@ -50,6 +50,8 @@ function calcular(a, b, c) {
 function mensagem(a, b, c) {
     if (a == 1) {
         resp.innerHTML = `x<sup>2</sup>`;
+    } else if (a == -1) {
+        resp.innerHTML = `- x<sup>2</sup>`;
     } else {
         resp.innerHTML = `${a}x<sup>2</sup>`;
     } 
