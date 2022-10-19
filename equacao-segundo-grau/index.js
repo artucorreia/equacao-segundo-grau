@@ -32,8 +32,6 @@ function calcular(a, b, c) {
         window.alert('Verifique os dados e tente novamente');
     } else{
         delta = b**2 - 4*a*c;
-        resp.innerHTML = `${a}x<sup>2</sup> + ${b}x + ${c} = 0`;
-        resp.innerHTML += `<p>&Delta; = ${delta}</p>`;
         if (delta >= 0) {
             raizDelta = Math.sqrt(delta);
             numerador = -(b) + raizDelta;
@@ -41,14 +39,47 @@ function calcular(a, b, c) {
             x[0] = numerador / denominador;
             numerador = -(b) - raizDelta;
             x[1] = numerador / denominador;
-            if (x[0] != x[1]) {
-                resp.innerHTML += `S = {${x[0].toFixed(2)}; `;
-                resp.innerHTML += `${x[1].toFixed(2)}}`;
-            } else {
-                resp.innerHTML += `S = {${x[0].toFixed(2)}}`;
-            }
+            mensagem(a, b, c);
         } else {
-            resp.innerHTML += `Raízes não estão contidas no conjunto dos reais`;
+            mensagem(a, b, c);
+        }
+    }
+}
+
+// mensagens
+function mensagem(a, b, c) {
+    if (a == 1) {
+        resp.innerHTML = `x<sup>2</sup>`;
+    } else {
+        resp.innerHTML = `${a}x<sup>2</sup>`;
+    } 
+    if (b == 0) {
+        resp.innerHTML += ``;
+    } else if (b == 1) {
+        resp.innerHTML += `+ x`;
+    } else if ((b < 0) && (b != -1)){
+        resp.innerHTML += `${b}x`;
+    } else if (b == -1) {
+        resp.innerHTML += `- x`;
+    } else {
+        resp.innerHTML += `+ ${b}x`;
+    }
+    if (c == 0) {
+        resp.innerHTML += `= 0`;
+    } else if (c < 0) {
+        resp.innerHTML += `${c} = 0`;
+    } else {
+        resp.innerHTML += `+ ${c} = 0`;
+    }
+    resp.innerHTML += `<p>&Delta; = ${delta}</p>`;
+    if (delta < 0) {
+        resp.innerHTML += `Raízes não estão contidas no conjunto dos reais`;
+    } else {
+        if (x[0] != x[1]) {
+            resp.innerHTML += `S = {${x[0].toFixed(2)}; `;
+            resp.innerHTML += `${x[1].toFixed(2)}}`;
+        } else {
+            resp.innerHTML += `S = {${x[0].toFixed(2)}}`;
         }
     }
 }
