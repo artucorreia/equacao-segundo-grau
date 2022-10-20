@@ -24,7 +24,7 @@ function limparInputs () {
 let resp = window.document.querySelector('div#resposta');
 let delta = 0;
 let raizDelta = 0;
-let numerador = 0;
+let numerador = [0, 0];
 let denominador = 0;
 let x = [0, 0];
 function calcular(a, b, c) {
@@ -34,11 +34,11 @@ function calcular(a, b, c) {
         delta = b**2 - 4*a*c;
         if (delta >= 0) {
             raizDelta = Math.sqrt(delta);
-            numerador = -(b) + raizDelta;
-            denominador = 2 * a;
-            x[0] = numerador / denominador;
-            numerador = -(b) - raizDelta;
-            x[1] = numerador / denominador;
+            numerador[0] = -(b) + raizDelta;
+            numerador[1] = -(b) - raizDelta;
+            denominador = 2 * a; 
+            x[0] = numerador[0] / denominador;
+            x[1] = numerador[1] / denominador;
             mensagem(a, b, c);
         } else {
             mensagem(a, b, c);
