@@ -48,13 +48,17 @@ function calcular(a, b, c) {
 
 // mensagens
 function mensagem(a, b, c) {
-    if (a == 1) {
-        resp.innerHTML = `x<sup>2</sup>`;
-    } else if (a == -1) {
-        resp.innerHTML = `- x<sup>2</sup>`;
-    } else {
-        resp.innerHTML = `${a}x<sup>2</sup>`;
-    } 
+    switch(a) {
+        case 1:
+            resp.innerHTML = `x<sup>2</sup> `;
+            break;
+        case -1:
+            resp.innerHTML = `-x<sup>2</sup> `;
+            break;
+        default:
+            resp.innerHTML = `${a}x<sup>2</sup> `;
+            break;
+    }     
     if (b == 0) {
         resp.innerHTML += ``;
     } else if (b == 1) {
@@ -69,7 +73,7 @@ function mensagem(a, b, c) {
     if (c == 0) {
         resp.innerHTML += `= 0`;
     } else if (c < 0) {
-        resp.innerHTML += `${c} = 0`;
+        resp.innerHTML += ` ${c} = 0`;
     } else {
         resp.innerHTML += `+ ${c} = 0`;
     }
